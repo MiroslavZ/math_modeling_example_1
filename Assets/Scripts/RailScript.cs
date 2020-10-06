@@ -6,7 +6,6 @@ public class RailScript : MonoBehaviour
 {
     public bool BoxIsOnTheRail;
 
-    //скрипт для фиксации соприкосновения груза с рейкой
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.name == "Box")

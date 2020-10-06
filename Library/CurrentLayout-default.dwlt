@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -418,9 +418,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6efbffff
+      m_SelectedIDs: de2f0000
+      m_LastClickedID: 12254
+      m_ExpandedIDs: 6efbffffc42f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.6243381, y: 1.0249316, z: 0.13393195}
+    m_Target: {x: -0.9785681, y: 1.3253639, z: 0.04659357}
     speed: 2
-    m_Value: {x: 0.6243381, y: 1.0249316, z: 0.13393195}
+    m_Value: {x: -0.9785681, y: 1.3253639, z: 0.04659357}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -511,13 +511,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.14284582, y: -0.11375153, z: 0.016528329, w: 0.98305184}
+    m_Target: {x: 0.11519678, y: -0.028306399, z: 0.0032839035, w: 0.992935}
     speed: 2
-    m_Value: {x: 0.14284523, y: -0.113751054, z: 0.01652826, w: 0.9830477}
+    m_Value: {x: 0.11519665, y: -0.028306369, z: 0.0032839, w: 0.9929339}
   m_Size:
-    m_Target: 5.3579597
+    m_Target: 3.9556732
     speed: 2
-    m_Value: 5.0579596
+    m_Value: 3.9556732
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -781,10 +781,10 @@ MonoBehaviour:
     m_Folders:
     - Assets/Scripts
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 70
   m_LastFolders:
   - Assets/Scripts
-  m_LastFoldersGridSize: -1
+  m_LastFoldersGridSize: 70
   m_LastProjectPath: C:\Unity Projects\math modeling examle 1
   m_LockTracker:
     m_IsLocked: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 3}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 70
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 115
 --- !u!114 &21
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 12252
+  m_LastSelectedObjectID: 12254
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52

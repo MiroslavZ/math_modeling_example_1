@@ -560,10 +560,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Box: {fileID: 979544400}
   Rail: {fileID: 920418245}
-  RailTrigger: {fileID: 0}
-  BoxFriction: 0
-  RailFriction: 0
+  BoxFriction: 0.3
+  RailFriction: 0.3
   Mass: 1
+  SupportReactionForce: 1
   Gravity: -9.81
 --- !u!1 &979544400
 GameObject:
