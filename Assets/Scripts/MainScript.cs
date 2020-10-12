@@ -7,6 +7,7 @@ public class MainScript : MonoBehaviour
 {
     public GameObject Box;
     public GameObject Rail;
+    public Transform RailCenter;
     //
     public float BoxFriction = 0.3f;
     public float RailFriction = 0.3f;
@@ -39,19 +40,20 @@ public class MainScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        var temp = Box.transform.position.x < RailCenter.position.x ? 1 : -1;
         if (railScript.BoxIsOnTheRail)
         {
             var railAngle = Vector3.Angle(Rail.transform.right, Vector3.right);
             var G = new Vector3(0, Gravity, 0) * Mass;
-            var N = Quaternion.AngleAxis(railAngle, Vector3.forward) * G * Mass * Mathf.Cos(railAngle);
-            var FF = Quaternion.AngleAxis(90, Vector3.back) * N * RailFriction;
+            var N = Quaternion.AngleAxis(railAngle*temp, Vector3.forward) * G * Mass * Mathf.Cos(railAngle);
+            var FF = Quaternion.AngleAxis(90*temp, Vector3.back) * N * RailFriction * temp;
             var Ma = G + N + FF;
             //Debug.DrawRay(Box.transform.position, Ma, Color.cyan, 0.3f);
             boxRigidBody.AddForce(Ma, ForceMode.Acceleration);
         }
         else
             boxRigidBody.AddForce(new Vector3(0, Gravity, 0), ForceMode.Acceleration);
-        DrawForceRays();
+        //DrawForceRays();
     }
 
     void UpdateFriction(PhysicMaterial m, float newFrictionValue)
