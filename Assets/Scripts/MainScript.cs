@@ -45,8 +45,8 @@ public class MainScript : MonoBehaviour
         {
             var railAngle = Vector3.Angle(Rail.transform.right, Vector3.right);
             var G = new Vector3(0, Gravity, 0) * Mass;
-            var N = Quaternion.AngleAxis(railAngle*temp, Vector3.forward) * G * Mass * Mathf.Cos(railAngle);
-            var FF = Quaternion.AngleAxis(90*temp, Vector3.back) * N * RailFriction * temp;
+            var N = Quaternion.AngleAxis(railAngle * temp, Vector3.forward) * G * Mass * Mathf.Cos(railAngle);
+            var FF = Quaternion.AngleAxis(90 * temp, Vector3.back) * N * RailFriction * temp;
             var Ma = G + N + FF;
             //Debug.DrawRay(Box.transform.position, Ma, Color.cyan, 0.3f);
             boxRigidBody.AddForce(Ma, ForceMode.Acceleration);
@@ -82,23 +82,28 @@ public class MainScript : MonoBehaviour
 
     void PhysicsV2()
     {
-        var railAngle = Vector3.Angle(Rail.transform.right, Vector3.right);
-        var G = new Vector3(0, Gravity, 0) * Mass;
-        var N = Quaternion.AngleAxis(railAngle, Vector3.forward) * G * Mass * Mathf.Cos(railAngle);
-        var FF = Quaternion.AngleAxis(90, Vector3.back) * N * RailFriction;
-        var Ma = G + N + FF;
-        Debug.DrawRay(Box.transform.position, Ma, Color.cyan, 0.3f);
-        boxRigidBody.AddForce(Ma, ForceMode.Acceleration);
+        if (railScript.BoxIsOnTheRail)
+        {
+            var railAngle = Vector3.Angle(Rail.transform.right, Vector3.right);
+            var G = new Vector3(0, Gravity, 0) * Mass;
+            var N = Quaternion.AngleAxis(railAngle, Vector3.forward) * G * Mass * Mathf.Cos(railAngle);
+            var FF = Quaternion.AngleAxis(90, Vector3.back) * N * RailFriction;
+            var Ma = G + N + FF;
+            //Debug.DrawRay(Box.transform.position, Ma, Color.cyan, 0.3f);
+            boxRigidBody.AddForce(Ma, ForceMode.Acceleration);
+        }
+        else
+            boxRigidBody.AddForce(new Vector3(0, Gravity, 0), ForceMode.Acceleration);
     }
 
     void PhysicsV1()
     {
         if (railScript.BoxIsOnTheRail)
         {
-            //N=mg*cos(a)
             var railAngle = Vector3.Angle(Rail.transform.right, Vector3.right);
-            //SupportReactionForce = Mass * Gravity * Mathf.Cos(railAngle);
-            var tempx = SupportReactionForce * RailFriction * Mathf.Cos(railAngle) - SupportReactionForce * Mathf.Sin(railAngle);
+            SupportReactionForce = Mass * Gravity * Mathf.Cos(railAngle);
+            var tempx = SupportReactionForce * RailFriction * Mathf.Cos(railAngle) 
+                - SupportReactionForce * Mathf.Sin(railAngle);
             var tempy = Mass * Gravity - SupportReactionForce * RailFriction * Mathf.Sin(railAngle)
                 - SupportReactionForce * Mathf.Cos(railAngle);
             Debug.DrawRay(Box.transform.position, new Vector3(tempx, tempy, 0), Color.yellow, 0.3f);
