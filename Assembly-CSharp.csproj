@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\old scripts\MainScript2.cs" />
     <Compile Include="Assets\Scripts\old scripts\RailTriggerScript.cs" />
     <Compile Include="Assets\Scripts\RailScript.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Unity Projects/math modeling examle 1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
